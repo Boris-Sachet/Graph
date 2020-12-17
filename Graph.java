@@ -243,7 +243,8 @@ public class Graph {
     }
     
     /**
-     * Build the list of arcs of the graph*/
+     * Build the list of arcs of the graph
+     * Needs to be executed after adding or removing nodes*/
     public void buildArcs(){
         ArrayList<Arc> arcsList = new ArrayList<>();
         for (Node node: nodes) {
@@ -285,5 +286,19 @@ public class Graph {
             arcsString.add(arc.toString());
         }
         return "{"+arcsString.toString()+"}";
+    }
+
+    /**
+     * Convert the graph to a string
+     * @return a string representation of the graph*/
+    @Override
+    public String toString(){
+        return "Graph nodes:"
+                + System.lineSeparator()
+                + nodesToString()
+                + System.lineSeparator()
+                + "Graph arcs:"
+                + System.lineSeparator()
+                + arcsToString();
     }
 }

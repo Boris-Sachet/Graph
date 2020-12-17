@@ -16,9 +16,6 @@ public class testGraph {
 
         graphe.buildArcs();
 
-        System.out.println("Affichage des Sommets:");
-        System.out.println(graphe.nodesToString());
-        System.out.println("Affichage des Arcs");
-        System.out.println(graphe.arcsToString());
+        System.out.println(graphe);
     }
 }
