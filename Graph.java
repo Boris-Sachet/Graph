@@ -212,8 +212,9 @@ public class Graph {
     }
 
     /**
-     * Build all the arcs from this node / to the successors of this node
-     * @param node node to build arcs from*/
+     * Build all the arcs to this node / from the predecessors of this node
+     * @param node node to build arcs from
+     * @deprecated this method is useless because arcs lists can be build from the list of successors alone*/
     private void buildArcsToNode(Node node, ArrayList<Arc> arcsList){
         if (debug) System.out.println("Building arc to "+node.getName());
 
@@ -246,8 +247,8 @@ public class Graph {
     public void buildArcs(){
         ArrayList<Arc> arcsList = new ArrayList<>();
         for (Node node: nodes) {
-//            buildArcsFromNode(node,arcsList);
-            buildArcsToNode(node,arcsList);
+            buildArcsFromNode(node,arcsList);
+//            buildArcsToNode(node,arcsList);
         }
         Collections.sort(arcsList);
         this.arcs = arcsList;
