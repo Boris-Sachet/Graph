@@ -27,11 +27,11 @@ public class Graph {
     //
     /**
      * @return the list of all nodes present in the graph*/
-    public ArrayList<Node> listNodes (){return nodes;}
+    public ArrayList<Node> listNodes (){return new ArrayList<>(nodes);}
 
     /**
      * @return the list of all arcs present in the graph*/
-    public ArrayList<Arc> listArcs() {return arcs;}
+    public ArrayList<Arc> listArcs() {return new ArrayList<>(arcs);}
 
     /**
      * @param node to get successors of
