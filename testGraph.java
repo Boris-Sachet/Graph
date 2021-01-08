@@ -17,5 +17,8 @@ public class testGraph {
         graphe.buildArcs();
 
         System.out.println(graphe);
+        System.out.println();
+//        System.out.println(graphe.listSuccessors(graphe.getNode("1")));
+        Algos.parcoursProfondeur(graphe,graphe.getNode("1"));
     }
 }
