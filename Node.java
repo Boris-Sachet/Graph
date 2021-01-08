@@ -128,8 +128,9 @@ public class Node implements Comparable<Node> {
      * @return a string description of the node*/
     @Override
     public String toString() {
-        if (value != -666) {return name + " value=" + value + " predecessors=" + predecessors.toString() + " successors=" + successors.toString();}
-        return name + " predecessors=" + predecessors.toString() + " successors=" + successors.toString();
+        /*if (value != -666) {return name + " value=" + value + " predecessors=" + predecessors.toString() + " successors=" + successors.toString();}
+        return name + " predecessors=" + predecessors.toString() + " successors=" + successors.toString();*/
+        return name;
     }
 
     /**
