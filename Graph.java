@@ -36,12 +36,24 @@ public class Graph {
     /**
      * @param node to get successors of
      * @return list of of nodes names successors of this node*/
-    public ArrayList<String> listSuccessors(Node node) {return node.getSuccessors();}
+    public ArrayList<Node> listSuccessors(Node node) {
+        ArrayList<Node> result = new ArrayList<>();
+        for (String succNode : node.getSuccessors()){
+            result.add(getNode(succNode));
+        }
+        return result;
+    }
 
     /**
      * @param node to get successors of
      * @return list of of nodes names predecessors of this node*/
-    public ArrayList<String> listPredecessors(Node node) {return node.getPredecessors();}
+    public ArrayList<Node> listPredecessors(Node node) {
+        ArrayList<Node> result = new ArrayList<>();
+        for (String predNode : node.getPredecessors()){
+            result.add(getNode(predNode));
+        }
+        return result;
+    }
 
     //
     // ARCS METHODS
@@ -51,7 +63,7 @@ public class Graph {
      * @param begin node from which the arc start
      * @param end node from which the arc end
      * @return the arc between the two nodes if it exists, or null*/
-    private Arc getArc(Node begin, Node end){
+    public Arc getArc(Node begin, Node end){
         for (Arc arc: listArcs()) {
             if (arc.getBegin() == begin && arc.getEnd() == end) {return arc;}
         }
